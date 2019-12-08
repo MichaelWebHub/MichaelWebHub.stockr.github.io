@@ -1,0 +1,13 @@
+@import "_utils/variables";
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.root__main {
+  flex: 1 0 auto;
+  padding: 20px;
+  background-color: $bg_primary;
+}

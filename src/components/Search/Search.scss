@@ -1,0 +1,59 @@
+@import "../../_utils/variables";
+
+.stock__search {
+  border: 0;
+  border-bottom: 1px solid $green;
+  outline: 0;
+  padding: 10px;
+  background-color: transparent;
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.search__results {
+  width: 100%;
+  max-height: 260px;
+  padding: 0 10px;
+  top: calc(100% + 1px);
+  position: absolute;
+  z-index: 100;
+  background-color: #fff;
+  overflow: auto;
+  border-radius: 10px;
+}
+
+.search__item {
+  padding: 10px 0;
+  cursor: pointer;
+  color: $font_primary;
+  font-weight: 400;
+  font-size: 16px;
+  border-bottom: 1px solid $border_color;
+}
+
+.search__item:last-of-type {
+  border-bottom: 0;
+}
+
+.search__ticker {
+  min-width: 80px;
+  color: $font_secondary;
+  margin-right: 20px;
+}
+
+.search__item-row {
+  display: flex;
+  align-items: center;
+}
+
+.search__item-row:first-of-type {
+  margin-bottom: 4px;
+}
+
+.search__flag {
+  margin-left: auto;
+  color: $font_secondary;
+}

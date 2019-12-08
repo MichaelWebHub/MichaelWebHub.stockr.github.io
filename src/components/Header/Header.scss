@@ -1,0 +1,20 @@
+@import "../../_utils/variables";
+
+.root__header {
+  display: flex;
+  align-items: center;
+  background-color: $bg_secondary;
+  padding: 20px;
+}
+
+.header__logo {
+  font-weight: 500;
+  font-size: 40px;
+  color: #fff;
+}
+
+.header__search {
+  width: 400px;
+  margin-left: 50px;
+  position: relative;
+}
