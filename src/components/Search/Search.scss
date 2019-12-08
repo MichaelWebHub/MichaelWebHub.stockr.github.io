@@ -1,12 +1,13 @@
 @import "../../_utils/variables";
 
 .stock__search {
+  width: 100%;
   border: 0;
   border-bottom: 1px solid $green;
   outline: 0;
   padding: 10px;
   background-color: transparent;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 500;
   color: #fff;
   text-transform: uppercase;

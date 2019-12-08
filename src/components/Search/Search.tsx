@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './Search.scss';
 import { fromEvent } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
-import { FindTicker, GetTickerData, GetTickerIndicators } from '../../_store/actions/stock.actions';
+import { FindTicker, GetTickerData } from '../../_store/actions/stock.actions';
 import { ISearchTicker, IStore } from '../../_store/interfaces/stock.interfaces';
 
 const Search = () => {
@@ -25,8 +25,9 @@ const Search = () => {
   };
 
   /** Get ticker data */
-  const getTickerData = (ticker: string) => {
-    dispatch({ type: GetTickerData.Pending, payload: ticker });
+  const getTickerData = (ticker: ISearchTicker) => {
+    input.current.value = ticker['2. name'];
+    dispatch({ type: GetTickerData.Pending, payload: ticker['1. symbol'] });
     // dispatch({ type: GetTickerIndicators.Pending, payload: ticker });
     setShowResults(false);
   };
@@ -51,7 +52,7 @@ const Search = () => {
 
   /** Results JSX */
   const resultsJSX = searchResult.map((e) =>
-    <div key={e['1. symbol']} className='search__item' onClick={() => getTickerData(e['1. symbol'])}>
+    <div key={e['1. symbol']} className='search__item' onClick={() => getTickerData(e)}>
       <div className='search__item-row'>
         <span className='search__name'>{e['2. name']}</span>
         <span className='search__flag'>{e['4. region']}</span>
